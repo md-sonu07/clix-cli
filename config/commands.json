@@ -1,0 +1,8 @@
+{
+  "create": {
+    "supports": ["express"]
+  },
+  "add": {
+    "supports": ["nextjs"]
+  }
+}

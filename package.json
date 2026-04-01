@@ -1,0 +1,36 @@
+{
+  "name": "clix-cli",
+  "version": "1.0.0",
+  "description": "A CLI tool for scaffolding projects designed to accelerate web development.",
+  "main": "index.js",
+  "bin": {
+    "clix": "./index.js"
+  },
+  "files": [
+    "commands/",
+    "config/",
+    "index.js",
+    "modules/",
+    "stacks/",
+    "templates/",
+    "utils/"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "scaffold",
+    "backend",
+    "generator",
+    "express"
+  ],
+  "author": "Danish Farhan",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^14.0.3",
+    "fs-extra": "^11.3.4"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "auth": {
+    "description": "Authentication module with login and signup",
+    "express": {
+      "controller.js": "controllers",
+      "routes.js": "routes",
+      "model.js": "models"
+    },
+    "nextjs": {
+      "route.js": "app/api"
+    }
+  },
+  "login": {
+    "description": "Simple login module",
+    "express": {
+      "controller.js": "controllers",
+      "routes.js": "routes",
+      "model.js": "models"
+    },
+    "nextjs": {
+      "route.js": "app/api"
+    }
+  },
+  "signup": {
+    "description": "Simple signup module",
+    "express": {
+      "controller.js": "controllers",
+      "routes.js": "routes",
+      "model.js": "models"
+    },
+    "nextjs": {
+      "route.js": "app/api"
+    }
+  },
+  "blog": {
+    "description": "Blog module with CRUD",
+    "express": {
+      "controller.js": "controllers",
+      "routes.js": "routes",
+      "model.js": "models"
+    },
+    "nextjs": {
+      "route.js": "app/api"
+    }
+  },
+  "admin": {
+    "description": "Admin dashboard module",
+    "express": {
+      "controller.js": "controllers",
+      "routes.js": "routes",
+      "model.js": "models"
+    },
+    "nextjs": {
+      "route.js": "app/api"
+    }
+  }
+}
