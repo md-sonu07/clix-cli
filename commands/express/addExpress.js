@@ -5,15 +5,15 @@ const chalk = require('chalk');
 module.exports = (program) => {
   program
     .command('add:express')
-    .description('Add express modules to the project and register routes')
-    .option('--modules <modules>', 'Comma-separated list of modules to add')
+    .description('Add express features to the project and register routes')
+    .option('-f, --features <features>', 'Comma-separated list of features to add')
     .action(async (options) => {
-      if (!options.modules) {
-        console.error(chalk.red('\n❌ Error: Please specify modules using --modules=signup,login'));
+      if (!options.features) {
+        console.error(chalk.red('\n✖ Error: Please specify features using -f or --features=signup,login'));
         process.exit(1);
       }
 
-      const modules = options.modules.split(',').map(m => m.trim());
+      const features = options.features.split(',').map(f => f.trim());
       const projectRoot = process.cwd();
       
       // Dynamic Structure Detection
@@ -26,10 +26,10 @@ module.exports = (program) => {
       const templatesPath = path.resolve(__dirname, '../../templates/express');
       const appJsPath = path.join(projectRoot, baseDir, 'app.js');
 
-      console.log(chalk.bold.cyan(`\n📦 Injecting Express modules into ${baseDir || 'root'} and registering routes...\n`));
+      console.log(chalk.bold.cyan(`\n📦 Injecting Express features into ${baseDir || 'root'} and registering routes...\n`));
 
       try {
-        for (const mod of modules) {
+        for (const mod of features) {
           const modTemplatePath = path.join(templatesPath, mod);
           
           if (await fs.pathExists(modTemplatePath)) {
@@ -78,13 +78,13 @@ module.exports = (program) => {
               }
             }
           } else {
-            console.warn(chalk.yellow(`⚠️  Template for module "${mod}" not found.`));
+            console.warn(chalk.yellow(`⚠️  Template for feature "${mod}" not found.`));
           }
         }
 
-        console.log(chalk.bold.green(`\n✨ Modules successfully integrated!\n`));
+        console.log(chalk.bold.green(`\n✨ Features successfully integrated!\n`));
       } catch (err) {
-        console.error(chalk.red(`\n✖ Error adding modules: ${err.message}`));
+        console.error(chalk.red(`\n✖ Error adding features: ${err.message}`));
         process.exit(1);
       }
     });

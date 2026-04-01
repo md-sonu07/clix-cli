@@ -7,7 +7,7 @@ module.exports = (program) => {
   program
     .command('create <name>')
     .description('Create a new project with refined structure and route registration')
-    .option('--modules <modules>', 'Comma-separated list of modules to add')
+    .option('-f, --features <features>', 'Comma-separated list of features to add')
     .action(async (name, options) => {
       const parts = name.split(':');
       const folderName = parts[0];
@@ -49,13 +49,13 @@ module.exports = (program) => {
           }
         }
 
-        // 2. Generate modules and register them
-        if (options.modules) {
-          console.log(chalk.gray('\n📦 Generating modules and registering routes...'));
-          const modulesList = options.modules.split(',').map(m => m.trim());
+        // 2. Generate features and register them
+        if (options.features) {
+          console.log(chalk.gray('\n📦 Generating features and registering routes...'));
+          const featuresList = options.features.split(',').map(f => f.trim());
           const appJsPath = path.join(srcPath, 'app.js');
 
-          for (const mod of modulesList) {
+          for (const mod of featuresList) {
             const modTemplatePath = path.join(templatesPath, mod);
             
             if (await fs.pathExists(modTemplatePath)) {
